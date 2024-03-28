@@ -3,6 +3,7 @@ view: budget_data {
   drill_fields: [store_id]
 
   dimension: store_id {
+    primary_key: yes
     type: string
     sql: ${TABLE}."店舗ID" ;;
   }
@@ -13,12 +14,12 @@ view: budget_data {
   dimension: budget_amount {
     type: number
     label: "合計予算"
-    sql: ${TABLE}."予算額" ;;
+    sql: ${TABLE}.budget_amount ;;
   }
   measure: budget_total {
     type: sum
     label: "合計予算"
-    sql: ${TABLE}."予算額";;
+    sql: ${TABLE}.budget_amount;;
   }
   measure: count {
     type: count
