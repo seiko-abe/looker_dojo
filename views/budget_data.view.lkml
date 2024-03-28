@@ -13,7 +13,7 @@ view: budget_data {
   dimension: budget_amount {
     type: number
     label: "合計予算"
-    sql: ${TABLE}."予算額" ;;
+    sql: ${TABLE}."budget_amount" ;;
   }
   measure: count {
     type: count
