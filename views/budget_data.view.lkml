@@ -1,6 +1,6 @@
 view: budget_data {
   sql_table_name: "DATA_SETS"."Budget_Data" ;;
-  drill_fields: [store_id]
+  # drill_fields: [store_id]
 
   dimension: store_id {
     primary_key: yes
@@ -13,7 +13,6 @@ view: budget_data {
   }
   dimension: budget_amount {
     type: number
-    label: "合計予算"
     sql: ${TABLE}."budget_amount" ;;
   }
   measure: budget_total {
@@ -21,8 +20,8 @@ view: budget_data {
     label: "合計予算額"
     sql: ${TABLE}."budget_amount";;
   }
-  measure: count {
-    type: count
-    drill_fields: [store_id]
-  }
+  # measure: count {
+  #   type: count
+  #   drill_fields: [store_id]
+  # }
 }
