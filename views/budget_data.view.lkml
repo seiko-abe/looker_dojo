@@ -5,21 +5,21 @@ view: budget_data {
   dimension: store_id {
     primary_key: yes
     type: string
-    sql: ${TABLE}."店舗ID" ;;
+    sql: ${TABLE}."store_id" ;;
   }
   dimension: budget_year {
     type: string
-    sql: ${TABLE}."予算年月" ;;
+    sql: ${TABLE}."budget_year" ;;
   }
   dimension: budget_amount {
     type: number
     label: "合計予算"
-    sql: ${TABLE}.budget_amount ;;
+    sql: ${TABLE}."budget_amount" ;;
   }
   measure: budget_total {
     type: sum
-    label: "合計予算"
-    sql: ${TABLE}.budget_amount;;
+    label: "合計予算額"
+    sql: ${TABLE}."budget_amount";;
   }
   measure: count {
     type: count
