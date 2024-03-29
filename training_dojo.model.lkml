@@ -26,7 +26,13 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
         sql_on: ${sales_data.store_id} = ${store_master.store_id};;
         }
       }
-
+    explore: sales_data_summary {
+      join: sales_data {
+        type: left_outer
+        relationship: many_to_one
+        sql_on: DATEADDD(year,1,${sales_data_summary.sales_day_2019}) = ${sales_data.sales_date};;
+        }
+      }
       explore: budget_data {
         join: sales_data {
           type: left_outer
