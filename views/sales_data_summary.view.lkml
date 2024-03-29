@@ -8,7 +8,7 @@ view: sales_data_summary {
       FROM
         "DATA_SETS"."Sales_Data" AS sales_data
       GROUP BY
-        shop_id, Sales_Date
+        shop_id,"売上日"
     ;;
   }
 
