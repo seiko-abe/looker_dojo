@@ -2,11 +2,11 @@ view: sales_data_summary {
   derived_table: {
     sql:
       SELECT
-        sales_data."store_id" AS shop_id,
-        DATE_TRUNC('MONTH', DATE(sales_data."sales_date", 'YYYY/MM/DD')) AS "売上日",
-        SUM(sales_data."sales") AS "売上"
+        Sales_Data."store_id" AS shop_id,
+        DATE_TRUNC('MONTH', DATE(Sales_Data."sales_date", 'YYYY/MM/DD')) AS "売上日",
+        SUM(Sales_Data."sales") AS "売上"
       FROM
-        "DATA_SETS"."sales_data" AS sales_data
+        "DATA_SETS"."Sales_Data" AS sales_data
       GROUP BY
         shop_id, sales_date
     ;;
