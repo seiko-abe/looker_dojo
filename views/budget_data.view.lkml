@@ -9,16 +9,16 @@ view: budget_data {
   }
   dimension: budget_year {
     type: string
-    sql: ${TABLE}."budget_year" ;;
+    sql: ${TABLE}."Budget_Year" ;;
   }
   dimension: budget_amount {
     type: number
-    sql: ${TABLE}."budget_amount" ;;
+    sql: ${TABLE}."Budget_Amount" ;;
   }
   measure: budget_total {
     type: sum
     label: "合計予算額"
-    sql: ${TABLE}."budget_amount";;
+    sql: ${TABLE}."Budget_Amount";;
   }
   # measure: count {
   #   type: count
