@@ -7,6 +7,7 @@ view: sales_data {
     sql: ${TABLE}."Store_ID" ;;
   }
   dimension: customer_id {
+    primary_key: yes
     type: number
     label: "顧客ID"
     sql: ${TABLE}."Customer_ID" ;;
