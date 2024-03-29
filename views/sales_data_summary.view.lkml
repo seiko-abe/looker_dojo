@@ -15,24 +15,24 @@ view: sales_data_summary {
   dimension: sales_day_2019 {
     type: date
     label: "2019年売上日"
-    sql: ${TABLE}."Sales_Date";;
+    sql: ${TABLE}."売上日";;
   }
 
   dimension: sales_day_2020 {
     type: date
     label: "2020年売上日"
-    sql:DATEADD(year, 1, sales_data_summary."Sales_Date");;
+    sql:DATEADD(year, 1, sales_data_summary."売上日");;
   }
 
   measure: sales_amount_2019 {
     type: sum
     label: "2019年売上金額"
-    sql: ${TABLE}."Sales";;
+    sql: ${TABLE}."売上";;
   }
 
   measure: sales_amount_2020 {
     type: sum
     label: "2020年売上金額"
-    sql: ${TABLE}."Sales";;
+    sql: ${TABLE}."売上";;
   }
 }
