@@ -5,7 +5,7 @@ view: budget_data {
   dimension: store_id {
     primary_key: yes
     type: string
-    sql: ${TABLE}."store_id" ;;
+    sql: ${TABLE}."Store_ID" ;;
   }
   dimension: budget_year {
     type: string
