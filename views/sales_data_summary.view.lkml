@@ -21,9 +21,8 @@ view: sales_data_summary {
   dimension: sales_day_2020 {
     type: date
     label: "2020年売上日"
-    sql:DATEADD(year, 1, sales_data_summary."売上日");;
+    sql:DATEADD(year, 1, ${sales_data_summary.sales_day_2019});;
   }
-
   measure: sales_amount_2019 {
     type: sum
     label: "2019年売上金額"
