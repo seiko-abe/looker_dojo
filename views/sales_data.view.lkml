@@ -1,5 +1,6 @@
 view: sales_data {
   sql_table_name: "DATA_SETS"."Sales_Data" ;;
+  drill_fields: [store_id]
 
   dimension: store_id {
     type: number
@@ -7,7 +8,7 @@ view: sales_data {
     sql: ${TABLE}."Store_ID" ;;
   }
   dimension: customer_id {
-    # primary_key: yes
+    primary_key: yes
     type: number
     label: "顧客ID"
     sql: ${TABLE}."Customer_ID" ;;
@@ -17,12 +18,12 @@ view: sales_data {
     label: "製品ID"
     sql: ${TABLE}."Product_ID" ;;
   }
+  # dimension: sales_date {
+  #   type: string
+  #   label: "売上日"
+  #   sql: ${TABLE}."Sales_Date" ;;
+  # }
   dimension: sales_date {
-    type: string
-    label: "売上日"
-    sql: ${TABLE}."Sales_Date" ;;
-  }
-  dimension: sales_date_month {
     type: date
     label: "売上月"
     sql: DATE_TRUNC('month', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
@@ -64,5 +65,6 @@ view: sales_data {
   }
   measure: count {
     type: count
+    drill_fields: [store_id, product_id, customer_id, .count]
   }
 }
