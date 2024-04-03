@@ -3,14 +3,17 @@ view: product_master {
 
   dimension: category_id {
     type: number
+    label: "カテゴリID"
     sql: ${TABLE}."Category_ID" ;;
   }
   dimension: product_id {
     type: number
+    label: "製品ID"
     sql: ${TABLE}."Product_ID" ;;
   }
   dimension: product_name {
     type: string
+    label: "製品名"
     sql: ${TABLE}."Product_Name" ;;
   }
   measure: count {
