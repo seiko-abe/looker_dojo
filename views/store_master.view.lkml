@@ -52,6 +52,11 @@ view: store_master {
     label: "経度"
     sql: ${TABLE}."Longitude" ;;
   }
+  dimension: customer_location {
+    type: location
+    sql_latitude: ${TABLE}."Latitude"  ;;
+    sql_longitude: ${TABLE}."Longitude";;
+  }
   dimension: zip_code_store {
     type: number
     label: "郵便番号(店舗)"
