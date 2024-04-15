@@ -18,12 +18,12 @@ view: sales_data {
     label: "製品ID"
     sql: ${TABLE}."Product_ID" ;;
   }
+  # dimension: sales_date {
+  #   type: string
+  #   label: "売上日"
+  #   sql: ${TABLE}."Sales_Date" ;;
+  # }
   dimension: sales_date {
-    type: string
-    label: "売上日"
-    sql: ${TABLE}."Sales_Date" ;;
-  }
-  dimension: sales_date_month {
     type: date
     label: "売上月"
     sql: DATE_TRUNC('month', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
