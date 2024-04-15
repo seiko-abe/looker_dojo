@@ -32,7 +32,7 @@ view: sales_data {
   dimension: sales_date {
     type: date
     label: "売上月"
-    sql: DATE_TRUNC('month', TO_DATE(${TABLE}."売上日", 'YYYY/MM/DD')) ;;
+    sql: DATE_TRUNC('month', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
   }
 
   dimension: cost_of_sales {
