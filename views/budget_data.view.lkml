@@ -23,6 +23,7 @@ view: budget_data {
     label: "合計予算"
     sql: ${TABLE}."Budget_Amount";;
   }
+
   measure: count {
     type: count
     drill_fields: [store_id]
