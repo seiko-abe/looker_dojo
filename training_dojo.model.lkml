@@ -25,12 +25,21 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
         relationship: many_to_one
         sql_on: ${sales_data.store_id} = ${store_master.store_id};;
         }
-      }
-    explore: sales_data_summary {
-      join: sales_data {
+
+      #sales_dataのセルフジョインを追加
+      join:sales_data2 {
+        from: sales_data
+        view_label: "last_year_sales_data"
         type: left_outer
-        relationship: many_to_one
-        sql_on: DATEADD(year,1,${sales_data_summary.sales_day_2019}) = ${sales_data.sales_date} ;;
+        relationship: many_to_many
+        sql_on: DATEADD(year, 2, ${sales_data.sales_date}) = ${sales_data2.sales_date};;
+      }
+      }
+      explore: sales_data_summary {
+        join: sales_data {
+          type: left_outer
+          relationship: many_to_one
+          sql_on: DATEADD(year,1,${sales_data_summary.sales_day_2019}) = ${sales_data.sales_date};;
         }
       }
       explore: budget_data {
