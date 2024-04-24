@@ -70,6 +70,11 @@ view: sales_data {
     label: "売上金額"
     sql: abs(${TABLE}."Sales");;
   }
+  measure: quantity_amount {
+    type: sum
+    label: "売上数量"
+    sql: abs(${TABLE}."Quantity");;
+  }
   measure: count {
     type: count
     drill_fields: [store_id, product_id, customer_id, .count]
