@@ -1,5 +1,6 @@
 view: product_master {
   sql_table_name: "DATA_SETS"."Product_Master" ;;
+  drill_fields: [product_id]
 
   dimension: category_id {
     type: number
@@ -7,6 +8,7 @@ view: product_master {
     sql: ${TABLE}."Category_ID" ;;
   }
   dimension: product_id {
+    primary_key: yes
     type: number
     label: "製品ID"
     sql: ${TABLE}."Product_ID" ;;
