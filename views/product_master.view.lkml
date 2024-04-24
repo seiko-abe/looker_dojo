@@ -18,6 +18,6 @@ view: product_master {
   }
   measure: count {
     type: count
-    drill_fields: [product_name]
+    drill_fields: [product_id, category_id, .count]
   }
 }
