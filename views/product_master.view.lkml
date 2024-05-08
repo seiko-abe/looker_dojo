@@ -1,5 +1,12 @@
 view: product_master {
-  sql_table_name: "DATA_SETS"."Product_Master" ;;
+  derived_table: {
+    sql:
+      SELECT
+        *
+      FROM
+        "DATA_SETS"."Product_Master"
+    ;;
+  }
   drill_fields: [product_id]
 
   dimension: category_id {
