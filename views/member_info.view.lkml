@@ -49,13 +49,13 @@ view: member_info {
   measure: female_members {
     type: sum
     label: "女性会員数"
-    sql: CASE WHEN ${TABLE}."Gender" = "女性" THEN ${TABLE}."Number_of_Members" ELSE 0 END ;;
+    sql: CASE WHEN ${TABLE}."Gender" = '女性' THEN ${TABLE}."Number_of_Members" ELSE 0 END ;;
   }
 
   measure: male_members {
     type: sum
     label: "男性会員数"
-    sql: CASE WHEN ${TABLE}."Gender" = "男性" THEN ${TABLE}."Number_of_Members" ELSE 0 END ;;
+    sql: CASE WHEN ${TABLE}."Gender" = '男性' THEN ${TABLE}."Number_of_Members" ELSE 0 END ;;
   }
 
   measure: count {
