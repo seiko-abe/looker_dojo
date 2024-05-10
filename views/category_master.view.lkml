@@ -12,6 +12,12 @@ view: category_master {
     label: "製品カテゴリ"
     sql: ${TABLE}."product_category" ;;
   }
+  filter: order_category {
+    type: string
+    label: "製品カテゴリ(フィルター用)"
+    suggest_dimension: product_category
+    suggest_explore: category_master
+  }
   measure: count {
     type: count
     drill_fields: [category_id]
