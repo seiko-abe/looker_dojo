@@ -48,13 +48,13 @@ view: member_info {
   measure: male_members {
     type: sum
     label: "男性会員数"
-    sql: ${TABLE}."Number_of_Members" * (${gender} = '男性');;
+    sql: ${TABLE}."Number_of_Members" * (${gender} = "男性");;
   }
 
   measure: female_members {
     type: sum
     label: "女性会員数"
-    sql: ${TABLE}."Number_of_Members" * (${gender} = '女性');;
+    sql: ${TABLE}."Number_of_Members" * (${gender} ="女性");;
   }
 
   measure: count {
