@@ -32,7 +32,7 @@ view: sales_data {
       week,
       month
     ]
-    sql:${TABLE}."Sales_Date" ;;
+    sql: DATE_TRUNC('month', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
   }
 
   dimension: sales_date {
