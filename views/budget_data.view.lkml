@@ -8,6 +8,7 @@ view: budget_data {
     label: "店舗ID"
     sql: ${TABLE}."Store_ID" ;;
   }
+
   dimension: budget_year {
     type: string
     label: "予算年月"
