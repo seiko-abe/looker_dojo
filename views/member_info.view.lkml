@@ -42,7 +42,7 @@ view: member_info {
   }
   measure: member_amount {
     type: sum
-    label: "合計会員"
+    label: "合計会員数"
     sql: abs(${TABLE}."Number_of_Members");;
   }
 
