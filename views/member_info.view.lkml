@@ -46,16 +46,27 @@ view: member_info {
     sql: abs(${TABLE}."Number_of_Members");;
   }
 
-  measure: female_members {
-    type: sum
-    label: "女性会員数"
-    sql: CASE WHEN ${TABLE}."Gender" = '女性' THEN ${TABLE}."Number_of_Members" ELSE 0 END ;;
-  }
+  # measure: female_members {
+  #   type: sum
+  #   label: "女性会員数"
+  #   sql: CASE WHEN ${TABLE}."Gender" = '女性' THEN ${TABLE}."Number_of_Members" ELSE 0 END ;;
+  # }
 
+  # measure: male_members {
+  #   type: sum
+  #   label: "男性会員数"
+  #   sql: CASE WHEN ${TABLE}."Gender" = '男性' THEN ${TABLE}."Number_of_Members" ELSE 0 END ;;
+  # }
   measure: male_members {
     type: sum
     label: "男性会員数"
-    sql: CASE WHEN ${TABLE}."Gender" = '男性' THEN ${TABLE}."Number_of_Members" ELSE 0 END ;;
+    sql: ${TABLE}."Number_of_Members"  * (${TABLE}."Gender" = '男性');;
+  }
+
+  measure: female_members {
+    type: sum
+    label: "女性会員数"
+    sql: ${TABLE}."Number_of_Members"  * (${TABLE}."Gender" = '女性');;
   }
 
   measure: count {
