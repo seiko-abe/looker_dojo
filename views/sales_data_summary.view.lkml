@@ -1,3 +1,8 @@
+include: "/views/sales_data.view.lkml"
+view: sales_inheritance {
+  extends: [sales_data]
+}
+
 view: sales_data_summary {
   derived_table: {
     sql:
