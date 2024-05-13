@@ -67,6 +67,11 @@ view: store_master {
     label: "店舗エリア"
     sql: ${TABLE}."Store_Area" ;;
   }
+  parameter: parameter_store_area {
+    label: "店舗エリア(フィルター用)"
+    type: string
+    suggestions: ["北日本", "東日本", "西日本"]
+  }
   dimension: store_manager {
     type: string
     label: "店舗マネージャー"
