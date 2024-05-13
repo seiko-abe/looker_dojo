@@ -46,10 +46,7 @@ view: sales_data {
     label: "原価"
     sql: ${TABLE}."Cost_of_Sales" ;;
   }
-  dimension: cost_of_sales_comparison {
-    type: yesno
-    sql:  ${TABLE}."Cost_of_Sales" >= 500 ;;
-  }
+
   dimension: gross_profit {
     type: string
     label: "荒利"
@@ -65,7 +62,10 @@ view: sales_data {
     label: "売上"
     sql: ${TABLE}."Sales" ;;
   }
-
+  dimension: sales_comparison {
+    type: yesno
+    sql:  ${TABLE}."Sales" >= 500 ;;
+  }
   dimension: voucher_number {
     type: string
     label: "伝票番号"
