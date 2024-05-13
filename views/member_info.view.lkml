@@ -27,7 +27,7 @@ view: member_info {
     type: date
     label: "特定の期間の誕生日"
     # dimension: parameter_birthday
-    sql: ${TABLE}."Birthday" <= ${parameter_birthday} ;;
+    sql: ${TABLE}."Birthday" <= ${TABLE}."Birthday" ;;
   }
 
 
