@@ -61,6 +61,10 @@ view: sales_data {
     label: "売上"
     sql: ${TABLE}."Sales" ;;
   }
+  dimension: sales_comparison {
+    type: yesno
+    sql:  ${TABLE}."Sales" >= 10000000 ;;
+  }
   dimension: voucher_number {
     type: string
     label: "伝票番号"
@@ -71,6 +75,7 @@ view: sales_data {
     label: "受注日付KEY"
     sql: ${TABLE}."Order_date_KEY" ;;
   }
+
   measure: sales_amount {
     type: sum
     label: "売上金額"
