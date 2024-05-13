@@ -18,18 +18,6 @@ view: member_info {
     label: "誕生日"
     sql: ${TABLE}."Birthday" ;;
   }
-  parameter: parameter_birthday {
-    label: "誕生日(フィルター用)"
-    type: date
-    default_value: "1990/12/31"
-  }
-  filter: birthday_period {
-    type: date
-    label: "特定の期間の誕生日"
-    # dimension: parameter_birthday
-    sql: ${TABLE}."Birthday" <= ${TABLE}."Birthday" ;;
-  }
-
 
   dimension: customer_city {
     type: string
