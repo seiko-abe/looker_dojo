@@ -32,15 +32,19 @@ view: store_master {
     label: "町村番地(店舗)"
     sql: ${TABLE}."Street_Address_Store" ;;
   }
+  dimension: store_prefecture {
+    type: string
+    label: "店舗都道府県"
+    sql: ${TABLE}."Store_Prefecture" ;;
+  }
   dimension: store_city_town_village {
     type: string
     label: "店舗市区町村"
     sql: ${TABLE}."Store_city_town_village" ;;
   }
-  dimension: store_prefecture {
+  dimension: store_prefecture_city {
     type: string
-    label: "店舗都道府県"
-    sql: ${TABLE}."Store_Prefecture" ;;
+    sql: ${store_prefecture} || ‘, ‘ || ${store_city_town_village} ;;
   }
   dimension: latitude {
     type: number
