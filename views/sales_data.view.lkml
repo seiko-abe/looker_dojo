@@ -90,7 +90,7 @@ view: sales_data {
   measure: average_sales {
     type: average
     label: "平均売上額"
-    sql: ${sales} ;;
+    sql: abs(${TABLE}."Sales");;
   }
   measure: count {
     type: count
