@@ -76,6 +76,8 @@ view: store_master {
     label: "店舗エリア(フィルター用)"
     type: string
     suggestions: ["北日本", "東日本", "西日本"]
+    suggest_explore: store_master
+    suggest_dimension: store_area
   }
   dimension: store_manager {
     type: string
