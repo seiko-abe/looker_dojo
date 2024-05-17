@@ -87,6 +87,11 @@ view: sales_data {
     label: "売上数量"
     sql: abs(${TABLE}."Quantity");;
   }
+  measure: average_sales {
+    type: average
+    label: "平均売上額"
+    sql: ${sales} ;;
+  }
   measure: count {
     type: count
     drill_fields: [store_id, product_id, customer_id, .count]
