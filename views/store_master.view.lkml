@@ -44,7 +44,8 @@ view: store_master {
   }
   dimension: store_prefecture_city {
     type: string
-    sql: ${store_prefecture} || ‘, ‘ || ${store_city_town_village} ;;
+    label: "店舗都道府県_市区町村"
+    sql: ${store_prefecture} || ', ' || ${store_city_town_village} ;;
   }
   dimension: latitude {
     type: number
