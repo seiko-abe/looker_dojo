@@ -72,13 +72,13 @@ view: store_master {
     label: "店舗エリア"
     sql: ${TABLE}."Store_Area" ;;
   }
-  parameter: parameter_store_prefecture {
-    label: "店舗都道府県(フィルター用)"
-    type: string
-    suggestions: ["東京", "新潟", "大阪"]
-    suggest_explore: store_master
-    suggest_dimension: store_prefecture
-  }
+  # parameter: parameter_store_prefecture {
+  #   label: "店舗都道府県(フィルター用)"
+  #   type: string
+  #   suggestions: ["東京", "新潟", "大阪"]
+  #   suggest_explore: store_master
+  #   suggest_dimension: store_prefecture
+  # }
   dimension: store_manager {
     type: string
     label: "店舗マネージャー"
