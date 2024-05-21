@@ -83,7 +83,7 @@ view: store_master {
     label: "店舗都道府県(フィルター用)"
     type: string
     suggest_dimension: store_prefecture
-    sql: ${TABLE}."Store_Prefecture" ;;
+    suggest_explore: store_master
   }
   dimension: store_manager {
     type: string
