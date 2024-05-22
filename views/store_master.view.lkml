@@ -7,19 +7,24 @@ view: store_master {
       FROM
         "DATA_SETS"."Store_Master"
       WHERE
-      {% condition store_prefecture %} Store_Master.store_prefecture {% endcondition %};;
+      {% condition store_category %} Store_Master.store_category {% endcondition %};;
     }
+  filter: store_category {
+    label: "店舗区分"
+    type: string
+  }
+  :
   dimension: store_id {
     primary_key: yes
     type: string
     label: "店舗ID"
     sql: ${TABLE}."Store_ID" ;;
   }
-  dimension: store_category {
-    type: string
-    label: "店舗区分"
-    sql: ${TABLE}."Store_Category" ;;
-  }
+  # dimension: store_category {
+  #   type: string
+  #   label: "店舗区分"
+  #   sql: ${TABLE}."Store_Category" ;;
+  # }
   dimension: area_id {
     type: string
     label: "地域ID"
