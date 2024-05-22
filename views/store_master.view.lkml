@@ -1,6 +1,14 @@
 view: store_master {
-  sql_table_name: "DATA_SETS"."Store_Master" ;;
-
+  # sql_table_name: "DATA_SETS"."Store_Master" ;;
+  derived_table: {
+      sql:
+      SELECT
+       *
+      FROM
+        "DATA_SETS"."Store_Master"
+      WHERE
+      {% condition store_prefecture %} Store_Master.store_prefecture {% endcondition %};;
+    }
   dimension: store_id {
     primary_key: yes
     type: string
