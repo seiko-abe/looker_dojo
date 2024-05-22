@@ -9,10 +9,10 @@ view: store_master {
       WHERE
       {% condition store_category %} Store_Master.store_category {% endcondition %};;
     }
-  filter: store_category {
+  filter: select_store_category {
     label: "店舗区分"
     type: string
-    sql: ${TABLE}."Store_Category" ;;
+    # sql: ${TABLE}."Store_Category" ;;
   }
   :
   dimension: store_id {
@@ -21,11 +21,11 @@ view: store_master {
     label: "店舗ID"
     sql: ${TABLE}."Store_ID" ;;
   }
-  # dimension: store_category {
-  #   type: string
-  #   label: "店舗区分"
-  #   sql: ${TABLE}."Store_Category" ;;
-  # }
+  dimension: store_category {
+    type: string
+    label: "店舗区分"
+    sql: ${TABLE}."Store_Category" ;;
+  }
   dimension: area_id {
     type: string
     label: "地域ID"
