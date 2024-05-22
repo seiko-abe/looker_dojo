@@ -9,7 +9,7 @@ view: store_filters {
           1,
           2 ;;
   }
-  filter: parameter_store_prefecture {
+  filter: store_prefecture {
     label: "店舗都道府県(フィルター用)"
     type: string
   }
