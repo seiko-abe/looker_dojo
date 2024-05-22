@@ -7,7 +7,7 @@ view: store_master {
       FROM
         "DATA_SETS"."Store_Master"
       WHERE
-      store_category = {% condition select_store_category %} store_category {% endcondition %};;
+      Store_Category = {% condition select_store_category %} Store_Category {% endcondition %};;
     }
   filter: select_store_category {
     label: "店舗区分"
