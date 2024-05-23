@@ -1,4 +1,5 @@
 view: product_master {
+  drill_fields: [product_id]
   derived_table: {
     sql:
       SELECT
@@ -7,8 +8,6 @@ view: product_master {
         "DATA_SETS"."Product_Master"
     ;;
   }
-  drill_fields: [product_id]
-
   dimension: category_id {
     type: number
     label: "カテゴリID"

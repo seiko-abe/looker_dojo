@@ -1,6 +1,12 @@
 view: sales_data {
-  sql_table_name: "DATA_SETS"."Sales_Data" ;;
-  drill_fields: [store_id]
+  # sql_table_name: "DATA_SETS"."Sales_Data" ;;
+  derived_table: {
+    sql:
+      SELECT
+       *
+      FROM
+        "DATA_SETS"."Sales_Data" ;;
+  }
 
   dimension: store_id {
     type: number
