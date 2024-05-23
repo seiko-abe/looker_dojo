@@ -8,9 +8,16 @@ view: member_info {
           FROM
             "DATA_SETS"."Member_Info"
           WHERE
-            {% condition customer_prefecture %} member_info.Customer_Prefecture {% endcondition %}
+          customer_prefecture = {% parameter parameter_prefecture %}
           ;;
     }
+  parameter: parameter_prefecture {
+    label: "顧客都道府県(フィルター用)"
+    type: string
+    suggestions: ["東京", "千葉", "新潟"]
+    # suggest_explore: countries
+    # suggest_dimension: name
+  }
   dimension: customer_id {
     primary_key: yes
     type: number
@@ -67,8 +74,6 @@ view: member_info {
     label: "男性会員数"
     sql: CASE WHEN ${TABLE}."Gender" = '男性' THEN ${TABLE}."Number_of_Members" ELSE 0 END ;;
   }
-
-
   measure: count {
     type: count
     drill_fields: [customer_id,]
