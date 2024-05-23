@@ -9,9 +9,9 @@ view: member_info {
             "DATA_SETS"."Member_Info"
           ;;
     }
-  filter: filter_birthday {
-    type: date
-  }
+  # filter: filter_birthday {
+  #   type: date
+  # }
   # "Customer_Prefecture" = {% parameter parameter_prefecture %}
   # parameter: parameter_prefecture {
   #   label: "顧客都道府県(フィルター用)"
