@@ -7,8 +7,6 @@ view: member_info {
             *
           FROM
             "DATA_SETS"."Member_Info"
-          -- WHERE
-          --   {% condition filter_birthday %} "Birthday" {% endcondition %}
           ;;
     }
   filter: filter_birthday {
@@ -34,7 +32,7 @@ view: member_info {
     sql: ${TABLE}."Gender" ;;
   }
   dimension: birthday {
-    type: date
+    type: string
     label: "誕生日"
     sql:${TABLE}."Birthday";;
   }
