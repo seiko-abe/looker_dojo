@@ -1,5 +1,15 @@
 view: member_info {
-  sql_table_name: "DATA_SETS"."Member_Info" ;;
+  # sql_table_name: "DATA_SETS"."Member_Info" ;;
+    derived_table: {
+      sql:
+      SELECT
+        *
+      FROM
+        "DATA_SETS"."Member_Info"
+      WHERE
+        {% condition customer_prefecture %} member_info.customer_prefecture {% endcondition %}
+    ;;
+    }
   drill_fields: [customer_id]
 
   dimension: customer_id {
