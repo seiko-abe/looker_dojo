@@ -7,8 +7,8 @@ view: member_info {
             *
           FROM
             "DATA_SETS"."Member_Info"
-          WHERE
-            {% condition filter_birthday %} "Birthday" {% endcondition %}
+          -- WHERE
+          --   {% condition filter_birthday %} "Birthday" {% endcondition %}
           ;;
     }
   filter: filter_birthday {
@@ -33,17 +33,10 @@ view: member_info {
     label: "性別"
     sql: ${TABLE}."Gender" ;;
   }
-  # dimension: birthday {
-  #   type: string
-  #   label: "誕生日"
-  #   sql:${TABLE}."Birthday";;
-  # }
-  dimension_group: birthday {
-    type: time
-    timeframes: [raw, date, week, month, quarter, year]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}."Birthday" ;;
+  dimension: birthday {
+    type: date
+    label: "誕生日"
+    sql:${TABLE}."Birthday";;
   }
   dimension: customer_city {
     type: string
