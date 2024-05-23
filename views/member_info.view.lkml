@@ -36,7 +36,7 @@ view: member_info {
   dimension: birthday {
     type: string
     label: "誕生日"
-    sql: ${TABLE}."Birthday" ;;
+    sql: DATE_FORMAT(${TABLE}."Birthday", '%Y/%m/%d') ;;
   }
 
   dimension: customer_city {
