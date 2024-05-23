@@ -9,10 +9,10 @@ view: store_master {
       "Store_Area"  = {% parameter parameter_area %};;
   }
   parameter: parameter_area {
-  type: string
   label: "店舗エリア(フィルター用)"
+  type: string
+  suggest_dimension: store_area
   }
-  :
   # filter: select_store_category {
   #   label: "店舗区分(フィルター用)"
   #   type: string
