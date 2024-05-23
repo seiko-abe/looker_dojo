@@ -16,7 +16,7 @@ view: store_master {
   }
   :
   dimension: store_id {
-    primary_key: yes
+    # primary_key: yes
     type: string
     label: "店舗ID"
     sql: ${TABLE}."Store_ID" ;;
@@ -27,6 +27,7 @@ view: store_master {
     sql: ${TABLE}."Store_Category" ;;
   }
   dimension: area_id {
+    primary_key: yes
     type: string
     label: "地域ID"
     sql: ${TABLE}."Area_ID" ;;
