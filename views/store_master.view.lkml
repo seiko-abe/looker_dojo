@@ -7,19 +7,19 @@ view: store_master {
       FROM
         "DATA_SETS"."Store_Master"
       WHERE
-      {% condition select_store_category %} store_category {% endcondition %}
-      AND
-      "Store_Area"  = {% parameter parameter_area %};;
+      {% condition select_store_category %} store_category {% endcondition %};;
+      ##AND
+      ##"Store_Area"  = {% parameter parameter_area %}
   }
   filter: select_store_category {
     label: "店舗区分(フィルター用)"
     type: string
     suggest_dimension: store_category
   }
-  parameter: parameter_area {
-  type: string
-  label: "店舗エリア(フィルター用)"
-  }
+  # parameter: parameter_area {
+  # type: string
+  # label: "店舗エリア(フィルター用)"
+  # }
   :
   dimension: store_id {
     # primary_key: yes
