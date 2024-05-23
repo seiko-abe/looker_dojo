@@ -7,7 +7,7 @@ view: member_info {
       FROM
         "DATA_SETS"."Member_Info"
       WHERE
-        {% condition customer_prefecture %} member_info.customer_prefecture {% endcondition %}
+        {% condition customer_prefecture %} member_info.prefecture {% endcondition %}
     ;;
     }
   drill_fields: [customer_id]
