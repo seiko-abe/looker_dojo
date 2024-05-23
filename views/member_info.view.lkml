@@ -8,16 +8,20 @@ view: member_info {
           FROM
             "DATA_SETS"."Member_Info"
           WHERE
-            "Customer_Prefecture" = {% parameter parameter_prefecture %}
+            {% condition filter_birthday %} DATE(Birthday) {% endcondition %}
           ;;
     }
-  parameter: parameter_prefecture {
-    label: "顧客都道府県(フィルター用)"
-    type: string
-    suggestions: ["宮城県", "千葉県", "新潟県"]
-    suggest_explore: Member_Info
-    suggest_dimension: customer_prefecture
+  filter: filter_birthday {
+    type: date
   }
+  # "Customer_Prefecture" = {% parameter parameter_prefecture %}
+  # parameter: parameter_prefecture {
+  #   label: "顧客都道府県(フィルター用)"
+  #   type: string
+  #   suggestions: ["宮城県", "千葉県", "新潟県"]
+  #   suggest_explore: Member_Info
+  #   suggest_dimension: customer_prefecture
+  # }
   dimension: customer_id {
     primary_key: yes
     type: number
