@@ -33,13 +33,13 @@ include: "/views/*.view.lkml"
         }
       }
 
-      # explore: store_master {
-      #   join: budget_data {
-      #     type: left_outer
-      #     relationship: many_to_one
-      #     sql_on: ${store_master.store_id} = ${budget_data.store_id} ;;
-      #   }
-      # }
+      explore: store_master {
+        join: budget_data {
+          type: left_outer
+          relationship: many_to_one
+          sql_on: ${store_master.store_id} = ${budget_data.store_id} ;;
+        }
+      }
 
       explore: product_master {
         extends: [sales_data,category_master]
