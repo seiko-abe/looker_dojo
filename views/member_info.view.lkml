@@ -8,7 +8,7 @@ view: member_info {
           FROM
             "DATA_SETS"."Member_Info"
           WHERE
-            {% condition filter_birthday %} DATE(Birthday) {% endcondition %}
+            {% condition filter_birthday %} DATE("Birthday") {% endcondition %}
           ;;
     }
   filter: filter_birthday {
