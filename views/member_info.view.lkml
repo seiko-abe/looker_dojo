@@ -7,8 +7,8 @@ view: member_info {
             *
           FROM
             "DATA_SETS"."Member_Info"
-          WHERE
-            "Customer_Prefecture" = {% parameter parameter_prefecture %}
+          # WHERE
+          #   "Customer_Prefecture" = {% parameter parameter_prefecture %}
           ;;
     }
   parameter: parameter_prefecture {
