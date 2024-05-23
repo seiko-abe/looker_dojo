@@ -11,6 +11,7 @@ view: store_master {
   parameter: parameter_area {
   label: "店舗エリア(フィルター用)"
   type: string
+  suggestions: ["東日本", "西日本"]
   suggest_dimension: store_area
   }
   # filter: select_store_category {
