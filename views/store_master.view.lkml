@@ -1,7 +1,7 @@
 view: store_master {
   # sql_table_name: "DATA_SETS"."Store_Master" ;;
   derived_table: {
-      sql:
+    sql:
       SELECT
        *
       FROM
@@ -10,14 +10,15 @@ view: store_master {
       {% condition select_store_category %} store_category {% endcondition %}
       AND
       "Store_Area"  = {% parameter parameter_area %};;
-    }
+  }
   filter: select_store_category {
-    label: "店舗区分"
+    label: "店舗区分(フィルター用)"
     type: string
     suggest_dimension: store_category
   }
   parameter: parameter_area {
   type: string
+  label: "店舗エリア(フィルター用)"
   }
   :
   dimension: store_id {
