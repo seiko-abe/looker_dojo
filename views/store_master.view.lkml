@@ -1,5 +1,4 @@
 view: store_master {
-  # sql_table_name: "DATA_SETS"."Store_Master" ;;
   derived_table: {
     sql:
       SELECT
@@ -7,20 +6,18 @@ view: store_master {
       FROM
         "DATA_SETS"."Store_Master"
       WHERE
-      {% condition select_store_category %} store_category {% endcondition %};;
-      ##AND
-      ##"Store_Area"  = {% parameter parameter_area %}
+      "Store_Area"  = {% parameter parameter_area %};;
   }
-  filter: select_store_category {
-    label: "店舗区分(フィルター用)"
-    type: string
-    suggest_dimension: store_category
+  parameter: parameter_area {
+  type: string
+  label: "店舗エリア(フィルター用)"
   }
-  # parameter: parameter_area {
-  # type: string
-  # label: "店舗エリア(フィルター用)"
-  # }
   :
+  # filter: select_store_category {
+  #   label: "店舗区分(フィルター用)"
+  #   type: string
+  #   suggest_dimension: store_category
+  # }
   dimension: store_id {
     # primary_key: yes
     type: string
@@ -167,3 +164,4 @@ view: store_master {
     drill_fields: [store_id, area_id, .count]
   }
 }
+      ##{% condition select_store_category %} store_category {% endcondition %}
