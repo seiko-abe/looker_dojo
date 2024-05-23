@@ -1,17 +1,16 @@
 view: member_info {
   # sql_table_name: "DATA_SETS"."Member_Info" ;;
+  drill_fields: [customer_id]
     derived_table: {
       sql:
-      SELECT
-        *
-      FROM
-        "DATA_SETS"."Member_Info"
-      WHERE
-        {% condition customer_prefecture %} member_info.prefecture {% endcondition %}
-    ;;
+          SELECT
+            *
+          FROM
+            "DATA_SETS"."Member_Info"
+          WHERE
+            {% condition customer_prefecture %} member_info.Customer_Prefecture {% endcondition %}
+          ;;
     }
-  drill_fields: [customer_id]
-
   dimension: customer_id {
     primary_key: yes
     type: number
