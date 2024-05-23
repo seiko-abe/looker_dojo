@@ -15,8 +15,8 @@ view: member_info {
     label: "顧客都道府県(フィルター用)"
     type: string
     suggestions: ["東京", "千葉", "新潟"]
-    # suggest_explore: countries
-    # suggest_dimension: name
+    suggest_explore: Member_Info
+    suggest_dimension: customer_prefecture
   }
   dimension: customer_id {
     primary_key: yes
