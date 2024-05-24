@@ -7,6 +7,7 @@ view: sales_data {
       FROM
         "DATA_SETS"."Sales_Data"
       WHERE
+      DATE("Sales_Date") >= {% parameter period_start %} AND DATE("Sales_Date") <= {% parameter period_end %}
          {% condition filter_period %} DATE("Sales_Date") {% endcondition %};;
   }
    parameter: period_start {
@@ -18,7 +19,7 @@ view: sales_data {
   filter: filter_period {
     type: date
   }
-  # DATE(sales_day) >= {% parameter period_start %} AND DATE(sales_day) <= {% parameter period_end %}
+
   dimension: store_id {
     type: number
     label: "店舗ID"
@@ -49,7 +50,7 @@ view: sales_data {
       week,
       month
     ]
-    sql: DATE_TRUNC('day', ${TABLE}."Sales_Date"::date);;
+    sql: DATE_TRUNC('day', TO_DATE(REPLACE(${TABLE}."Sales_Date", '/', '-'), 'YYYY-MM-DD'));;
   }
 
   dimension: sales_date {
