@@ -6,11 +6,14 @@ view: member_info {
             *
           FROM
             "DATA_SETS"."Member_Info"
-          ;;
+          WHERE
+          --DATE(BIRTH) >= {% parameter period_start %} AND DATE(BIRTH) <= {% parameter period_end %}
+          {% condition filter_birthday %} DATE("Birthday") {% endcondition %}
+      ;;
     }
-  # filter: filter_birthday {
-  #   type: date
-  # }
+  filter: filter_birthday {
+    type: date
+  }
   # "Customer_Prefecture" = {% parameter parameter_prefecture %}
   # parameter: parameter_prefecture {
   #   label: "顧客都道府県(フィルター用)"
