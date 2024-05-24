@@ -30,11 +30,19 @@ view: member_info {
     label: "性別"
     sql: ${TABLE}."Gender" ;;
   }
+  # dimension: birthday {
+  #   type: string
+  #   label: "誕生日"
+  #   sql:${TABLE}."Birthday";;
+  # }
   dimension: birthday {
-    type: string
+    type: date
     label: "誕生日"
-    sql:${TABLE}."Birthday";;
+    sql: CAST(${TABLE}."Birthday" AS DATE)
+    convert_tz: no
+    format: "%Y/%m/%d";;
   }
+
   dimension: customer_city {
     type: string
     label: "顧客市区町村"
