@@ -39,7 +39,7 @@ view: sales_data {
       week,
       month
     ]
-    sql: DATE_TRUNC('day', TO_DATE(REPLACE(${TABLE}."Sales_Date", '/', '-'), 'YYYY-MM-DD'));;
+    sql: DATE_TRUNC('day',TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
   }
 
   dimension: sales_date {
