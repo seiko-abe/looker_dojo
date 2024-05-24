@@ -7,8 +7,8 @@ view: sales_data {
       FROM
         "DATA_SETS"."Sales_Data"
       WHERE
-      DATE(sales_date) >= {% parameter period_start %} AND DATE(sales_date) <= {% parameter period_end %}
-         {% condition filter_period %} DATE(sales_date) {% endcondition %};;
+      DATE(sales_day) >= {% parameter period_start %} AND DATE(sales_day) <= {% parameter period_end %}
+         {% condition filter_period %} DATE(sales_day) {% endcondition %};;
   }
    parameter: period_start {
     type: date
@@ -35,20 +35,34 @@ view: sales_data {
     label: "製品ID"
     sql: ${TABLE}."Product_ID" ;;
   }
-  dimension: sales_day {
-    type: string
-    label: "売上日"
-    sql: ${TABLE}."Sales_Date" ;;
-  }
+  # dimension: sales_day {
+  #   type: string
+  #   label: "売上日"
+  #   sql: ${TABLE}."Sales_Date" ;;
+  # }
 
-  dimension_group: period {
+  # dimension_group: period {
+  #   type: time
+  #   datatype: datetime
+  #   timeframes: [
+  #     date,
+  #     week,
+  #     month
+  #   ]
+  #   sql: DATE_TRUNC('month', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
+  # }
+  dimension_group: sales_day {
     type: time
-    datatype: datetime
+    datatype: date
     timeframes: [
+      raw,
       date,
       week,
-      month
+      month,
+      quarter,
+      year
     ]
+    convert_tz: no
     sql: DATE_TRUNC('month', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
   }
 
