@@ -6,7 +6,7 @@ view: store_master {
       FROM
         "DATA_SETS"."Store_Master"
       WHERE
-      {% condition store_prefecture %} Store_Master.store_prefecture {% endcondition %};;
+      {% condition select_store_category %} Store_Master.store_prefecture {% endcondition %};;
   }
   # WHERE
   # "Store_Area"  = {% parameter parameter_area %};;
@@ -16,11 +16,11 @@ view: store_master {
   # suggestions: ["東日本", "西日本"]
   # suggest_dimension: store_area
   # }
-  # filter: select_store_category {
-  #   label: "店舗区分(フィルター用)"
-  #   type: string
-  #   suggest_dimension: store_category
-  # }
+  filter: select_store_category {
+    label: "店舗区分(フィルター用)"
+    type: string
+    # suggest_dimension: store_category
+  }
   dimension: store_id {
     primary_key: yes
     type: string
