@@ -7,7 +7,7 @@ view: sales_data {
       FROM
         "DATA_SETS"."Sales_Data"
       WHERE
-         {% condition filter_period %} DATE(sales_day) {% endcondition %};;
+         {% condition filter_period %} DATE("sales_day") {% endcondition %};;
   }
    parameter: period_start {
     type: date
@@ -63,7 +63,7 @@ view: sales_data {
       year
     ]
     convert_tz: no
-    sql: DATE_TRUNC('month', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
+    sql: ${TABLE}."Sales_Date";;
   }
 
   dimension: sales_date {
