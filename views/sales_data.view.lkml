@@ -63,7 +63,7 @@ view: sales_data {
       year
     ]
     convert_tz: no
-    sql: CAST(${TABLE}."Sales_Date" AS DATE);;
+    sql: DATE_TRUNC('day', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
   }
 
   dimension: sales_date {
