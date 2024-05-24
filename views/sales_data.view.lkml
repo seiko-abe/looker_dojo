@@ -41,28 +41,14 @@ view: sales_data {
   #   sql: ${TABLE}."Sales_Date" ;;
   # }
 
-  # dimension_group: period {
-  #   type: time
-  #   datatype: datetime
-  #   timeframes: [
-  #     date,
-  #     week,
-  #     month
-  #   ]
-  #   sql: DATE_TRUNC('month', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
-  # }
-  dimension_group: sales_day {
+  dimension_group: period {
     type: time
     datatype: datetime
     timeframes: [
-      raw,
       date,
       week,
-      month,
-      quarter,
-      year
+      month
     ]
-    convert_tz: no
     sql: DATE_TRUNC('day', TO_DATE(${TABLE}."Sales_Date", 'YYYY/MM/DD')) ;;
   }
 
