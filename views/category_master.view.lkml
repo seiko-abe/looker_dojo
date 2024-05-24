@@ -1,7 +1,13 @@
 view: category_master {
-  sql_table_name: "DATA_SETS"."Category_Master" ;;
   drill_fields: [category_id]
-
+  derived_table: {
+    sql:
+          SELECT
+            *
+          FROM
+            "DATA_SETS"."Category_Master"
+          ;;
+  }
   dimension: category_id {
     type: number
     label: "カテゴリID"

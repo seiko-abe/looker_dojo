@@ -1,5 +1,4 @@
 view: member_info {
-  # sql_table_name: "DATA_SETS"."Member_Info" ;;
   drill_fields: [customer_id]
     derived_table: {
       sql:

@@ -1,7 +1,13 @@
 view: budget_data {
-  sql_table_name: "DATA_SETS"."Budget_Data" ;;
   drill_fields: [store_id]
-
+  derived_table: {
+    sql:
+          SELECT
+            *
+          FROM
+            "DATA_SETS"."Budget_Data"
+          ;;
+  }
   dimension: store_id {
     # primary_key: yes
     type: string
