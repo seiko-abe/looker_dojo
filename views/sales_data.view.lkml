@@ -6,19 +6,7 @@ view: sales_data {
        *
       FROM
         "DATA_SETS"."Sales_Data"
-      WHERE
-      --DATE("Sales_Date") >= {% parameter period_start %} AND DATE("Sales_Date") <= {% parameter period_end %}
-         {% condition filter_period %} DATE("Sales_Date") {% endcondition %}
       ;;
-  }
-   parameter: period_start {
-    type: date
-  }
-  parameter: period_end {
-    type: date
-  }
-  filter: filter_period {
-    type: date
   }
 
   dimension: store_id {
