@@ -7,8 +7,7 @@ view: member_info {
           FROM
             "DATA_SETS"."Member_Info"
           WHERE
-          --DATE(BIRTH) >= {% parameter period_start %} AND DATE(BIRTH) <= {% parameter period_end %}
-          {% condition filter_birthday %} DATE("Birthday") {% endcondition %}
+            {% condition filter_birthday %} TO_DATE("Birthday", 'YYYY-MM-DD') {% endcondition %}
       ;;
     }
   filter: filter_birthday {
