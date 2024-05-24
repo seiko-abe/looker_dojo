@@ -6,7 +6,7 @@ view: store_master {
       FROM
         "DATA_SETS"."Store_Master"
       WHERE
-      {% condition store_prefecture %} store_master.store_prefecture {% endcondition %};;
+      {% condition store_prefecture %} Store_Master.store_prefecture {% endcondition %};;
   }
   # WHERE
   # "Store_Area"  = {% parameter parameter_area %};;
