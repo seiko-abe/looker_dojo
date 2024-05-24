@@ -5,9 +5,20 @@ view: sales_data {
       SELECT
        *
       FROM
-        "DATA_SETS"."Sales_Data" ;;
+        "DATA_SETS"."Sales_Data"
+      WHERE
+      DATE(sales_date) >= {% parameter period_start %} AND DATE(sales_date) <= {% parameter period_end %}
+         {% condition filter_period %} DATE(sales_date) {% endcondition %};;
   }
-
+   parameter: period_start {
+    type: date
+  }
+  parameter: period_end {
+    type: date
+  }
+  filter: filter_period {
+    type: date
+  }
   dimension: store_id {
     type: number
     label: "店舗ID"
@@ -24,11 +35,11 @@ view: sales_data {
     label: "製品ID"
     sql: ${TABLE}."Product_ID" ;;
   }
-  # dimension: sales_date {
-  #   type: string
-  #   label: "売上日"
-  #   sql: ${TABLE}."Sales_Date" ;;
-  # }
+  dimension: sales_day {
+    type: string
+    label: "売上日"
+    sql: ${TABLE}."Sales_Date" ;;
+  }
 
   dimension_group: period {
     type: time
