@@ -4,7 +4,9 @@ view: store_master {
       SELECT
        *
       FROM
-        "DATA_SETS"."Store_Master" ;;
+        "DATA_SETS"."Store_Master"
+      WHERE
+      {% condition store_prefecture %} store_master.store_prefecture {% endcondition %};;
   }
   # WHERE
   # "Store_Area"  = {% parameter parameter_area %};;
