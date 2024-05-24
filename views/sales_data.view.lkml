@@ -7,7 +7,7 @@ view: sales_data {
       FROM
         "DATA_SETS"."Sales_Data"
       WHERE
-         {% condition filter_period %} DATE("sales_day") {% endcondition %};;
+         {% condition filter_period %} DATE("Sales_Date") {% endcondition %};;
   }
    parameter: period_start {
     type: date
