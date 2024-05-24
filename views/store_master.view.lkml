@@ -4,16 +4,16 @@ view: store_master {
       SELECT
        *
       FROM
-        "DATA_SETS"."Store_Master"
-      WHERE
-      "Store_Area"  = {% parameter parameter_area %};;
+        "DATA_SETS"."Store_Master" ;;
   }
-  parameter: parameter_area {
-  label: "店舗エリア(フィルター用)"
-  type: string
-  suggestions: ["東日本", "西日本"]
-  suggest_dimension: store_area
-  }
+  # WHERE
+  # "Store_Area"  = {% parameter parameter_area %};;
+  # parameter: parameter_area {
+  # label: "店舗エリア(フィルター用)"
+  # type: string
+  # suggestions: ["東日本", "西日本"]
+  # suggest_dimension: store_area
+  # }
   # filter: select_store_category {
   #   label: "店舗区分(フィルター用)"
   #   type: string
@@ -165,4 +165,3 @@ view: store_master {
     drill_fields: [store_id, area_id, .count]
   }
 }
-      ##{% condition select_store_category %} store_category {% endcondition %}
