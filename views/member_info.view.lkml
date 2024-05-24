@@ -38,9 +38,7 @@ view: member_info {
   dimension: birthday {
     type: date
     label: "誕生日"
-    sql: CAST(${TABLE}."Birthday" AS DATE)
-    convert_tz: no
-    format: "%Y/%m/%d";;
+    sql: CAST(${TABLE}."Birthday" AS DATE);;
   }
 
   dimension: customer_city {
