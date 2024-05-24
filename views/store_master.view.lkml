@@ -20,7 +20,7 @@ view: store_master {
   #   suggest_dimension: store_category
   # }
   dimension: store_id {
-    # primary_key: yes
+    primary_key: yes
     type: string
     label: "店舗ID"
     sql: ${TABLE}."Store_ID" ;;
