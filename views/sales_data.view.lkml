@@ -7,8 +7,9 @@ view: sales_data {
       FROM
         "DATA_SETS"."Sales_Data"
       WHERE
-      DATE("Sales_Date") >= {% parameter period_start %} AND DATE("Sales_Date") <= {% parameter period_end %}
-         {% condition filter_period %} DATE("Sales_Date") {% endcondition %};;
+      --DATE("Sales_Date") >= {% parameter period_start %} AND DATE("Sales_Date") <= {% parameter period_end %}
+         {% condition filter_period %} DATE("Sales_Date") {% endcondition %}
+      ;;
   }
    parameter: period_start {
     type: date
