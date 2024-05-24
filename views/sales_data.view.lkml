@@ -53,7 +53,7 @@ view: sales_data {
   # }
   dimension_group: sales_day {
     type: time
-    datatype: date
+    datatype: datetime
     timeframes: [
       raw,
       date,
