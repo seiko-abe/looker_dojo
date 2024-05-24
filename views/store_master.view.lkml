@@ -6,7 +6,7 @@ view: store_master {
       FROM
         "DATA_SETS"."Store_Master"
       WHERE
-      {% condition select_store_category %} store_category {% endcondition %};;
+      {% condition select_store_category %} store_master.store_category  {% endcondition %};;
   }
   # WHERE
   # "Store_Area"  = {% parameter parameter_area %};;
