@@ -19,7 +19,7 @@ view: store_master {
   filter: select_store_category {
     label: "店舗区分(フィルター用)"
     type: string
-    # suggest_dimension: store_category
+    suggest_dimension: store_category
   }
   dimension: store_id {
     primary_key: yes
