@@ -1,13 +1,7 @@
 view: budget_data {
   drill_fields: [store_id]
-  derived_table: {
-    sql:
-          SELECT
-            *
-          FROM
-            "DATA_SETS"."Budget_Data"
-          ;;
-  }
+  sql_table_name: "DATA_SETS"."Budget_Data";;
+
   dimension: store_id {
     # primary_key: yes
     type: string
@@ -36,3 +30,11 @@ view: budget_data {
     drill_fields: [store_id]
   }
 }
+# derived_table: {
+#   sql:
+#           SELECT
+#             *
+#           FROM
+#             "DATA_SETS"."Budget_Data"
+#           ;;
+# }

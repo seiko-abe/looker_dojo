@@ -1,5 +1,4 @@
 view: sales_data {
-  # sql_table_name: "DATA_SETS"."Sales_Data" ;;
   derived_table: {
     sql:
       SELECT
