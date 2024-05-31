@@ -35,7 +35,7 @@ view: member_info {
   dimension: gender_source {
     type: yesno
     label: "性別(男女別)"
-    sql: ${TABLE}."Gender"= "男性" ;;
+    sql: ${TABLE}."Gender"= '男性' ;;
   }
   # dimension: birthday {
   #   type: string
