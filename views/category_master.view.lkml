@@ -29,7 +29,7 @@ view: category_master {
   dimension: category_source {
     type: yesno
     label: "製品カテゴリ(フィルター用)"
-    sql:${TABLE}."product_category" = 'ジャム' ;;
+    sql:${TABLE}."product_category" = 'ジャム','キャンディ' ;;
   }
   measure: count {
     type: count
