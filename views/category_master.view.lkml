@@ -30,7 +30,7 @@ view: category_master {
     type: yesno
     label: "製品カテゴリ(フィルター用)"
     sql:${TABLE}."product_category" = 'ジャム'
-        AND :${TABLE}."product_category" = 'ジャム&ゼリー'  ;;
+        AND ${TABLE}."product_category" = 'ジャム&ゼリー'  ;;
   }
   measure: count {
     type: count
