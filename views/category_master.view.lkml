@@ -26,7 +26,11 @@ view: category_master {
     label: "製品カテゴリ"
     sql: ${TABLE}."product_category" ;;
   }
-
+  dimension: category_source {
+    type: yesno
+    label: "製品カテゴリ(フィルター用)"
+    sql:${TABLE}."product_category" = 'ジャム' ;;
+  }
   measure: count {
     type: count
     drill_fields: [category_id]
